@@ -118,6 +118,11 @@ public struct TextView: View {
 					: textView.resignFirstResponder()
 			}
 		}
+        
+        public func frame(numberOfLines: Int) -> some View {
+            let height = UIFont.systemFont(ofSize: 17).lineHeight * CGFloat(numberOfLines)
+            return self.frame(height: height)
+        }
 	}
 	
 	public typealias TextAlignment = NSTextAlignment
